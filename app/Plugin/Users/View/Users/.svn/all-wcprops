@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users
+END
+address_book.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/address_book.ctp
+END
+profile.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/profile.ctp
+END
+feed.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/feed.ctp
+END
+signup.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/signup.ctp
+END
+edit_profile.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/edit_profile.ctp
+END
+crop_image.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/crop_image.ctp
+END
+notification_settings.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/notification_settings.ctp
+END
+admin_user_profile.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/admin_user_profile.ctp
+END
+admin_addedit.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/admin_addedit.ctp
+END
+change_password.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/change_password.ctp
+END
+login.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/login.ctp
+END
+upload_crop_image.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/upload_crop_image.ctp
+END
+sharing_settings.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/sharing_settings.ctp
+END
+admin_index.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/admin_index.ctp
+END
+tagging.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/tagging.ctp
+END
+form_address_book.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/form_address_book.ctp
+END
+forgot_password.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/forgot_password.ctp
+END
+secure_check.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Users/secure_check.ctp
+END

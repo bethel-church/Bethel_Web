@@ -1,0 +1,24 @@
+    jQuery(document).ready(function()
+    {
+        jQuery("#showroomId").validate(
+        {	
+            errorElement: "div",
+            rules: {	                 
+                "data[Showroom][showroom]": {
+                    required: true
+                },
+                "data[Showroom][showroom_category_id]": {
+                    required: true
+                }
+            },
+             messages: {
+                "data[Showroom][showroom]": {
+                    required: "Please enter the showroom name."                    
+                },
+                "data[Showroom][showroom_category_id]": {
+                    required: "Please select category."
+                }
+            }         
+        });
+    }); 
+    

@@ -1,0 +1,165 @@
+    <?php    
+        echo $this->Html->script('fancybox/jquery.fancybox');
+        echo $this->Html->css('fancybox/jquery.fancybox');    
+    ?>   
+   	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			jQuery('.fancybox').fancybox({
+                maxWidth	: 400,
+                maxHeight	: 300,
+                fitToView	: false,
+                width		: '70%',
+                height		: '70%',
+                autoSize	: false,
+                closeClick	: false,
+                openEffect	: 'none',
+                closeEffect	: 'none'
+            });
+		});
+	</script>
+    <?php
+        $recordExits = false;            
+        if(isset($getData) && !empty($getData))
+        {
+           $recordExits = true;            
+        }
+        echo $this->Form->create('Search', array('url' => array('controller' => 'users', 'action' => 'index'),'id'=>'userId'));  ?>
+        <div class="row padding_btm_20">
+            <div class="col-lg-2">   
+                 <?php echo $this->Form->input('keyword',array('label' => false,'div' => false, 'placeholder' => 'Search','class' => 'form-control','maxlength' => 55));?>
+            </div>
+            <div class="col-lg-2">   
+                 <?php echo $this->Form->input('accounttype', array('label' => false,'div' => false,'options' => array('D' => 'Direct', 'F' => 'Facebook', 'T' => 'Twitter'),'class' => 'form-control','id' => 'acounttypeId','empty'=>'-Select Type-'));?>                 
+            </div>
+            <div class="col-lg-2">   
+                 <?php echo $this->Form->input('show', array('label' => false,'div' => false,'options' => array('1' => 'Active', '0' => 'Inactive'),'class' => 'form-control','id' => 'showId','empty'=>'-Select Status-'));?>                 
+            </div>
+            <div class="col-lg-2">                        
+                <?php echo $this->Form->button('Search', array('type' => 'submit','class' => 'btn btn-default'));?>
+            </div>
+            <div class="col-lg-4">    
+                <div class="addbutton">                
+                    <?php echo $this->Html->link('Add User','/admin/users/addedit',array('class' => 'icon-file-alt','title' => 'Add User'));?>
+                </div>
+            </div>
+        </div>
+        <?php echo $this->Form->end();    
+    ?>
+    
+    <div class="row">
+        <div class="col-lg-4">                        
+             <?php echo $this->Session->flash();?>   
+        </div>            
+    </div>
+    
+    <?php echo $this->Form->create('User', array('url' => array('controller' => 'users', 'action' => 'index'),'id'=>'UserFormId'));  ?>
+    
+    <div class="row">
+        <div class="col-lg-12">            
+            <div class="table-responsive">               
+                 
+                <?php if($recordExits)
+                { ?>
+                <table class="table table-bordered table-hover table-striped tablesorter">
+                    <thead>
+                        <tr>
+                            <th class="th_checkbox"><input type="checkbox" class="checkall"></th>
+                            
+                            <th><?php echo $this->Paginator->sort('type', 'User Type'); ?></th>
+                            <th><?php echo $this->Paginator->sort('username', 'Username'); ?></th>
+                            <th><?php echo $this->Paginator->sort('first_name', 'First Name'); ?></th>
+                            <th><?php echo $this->Paginator->sort('last_name', 'Last Name'); ?></th>
+                            <th><?php echo $this->Paginator->sort('email', 'Email'); ?></th>
+                            <th class="th_checkbox"><?php echo $this->Paginator->sort('status', 'Status'); ?> </th>
+                            <th class="th_checkbox"><?php echo $this->Paginator->sort('created', 'Created'); ?> </th>                            
+                            <th class="th_checkbox">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="dyntable">
+                        <?php
+                        $i = 0;
+                        
+                        foreach($getData as $key => $getData)
+                        {
+                            $class = ($i%2 == 0) ? ' class="active"' : '';
+                            ?>
+                        <tr <?php echo $class;?>>
+                            <td align="center"><input type="checkbox" name="checkboxes[]" class ="checkboxlist" value="<?php echo base64_encode($getData['User']['id']);?>" ></td>                            <?php                            
+                                if($getData['User']['type'] == 'F')
+                                {
+                                    $typeTitle = 'Facebook';
+                                }else if($getData['User']['type'] == 'T')
+                                {
+                                    $typeTitle = 'Twitter';
+                                }else{
+                                    $typeTitle = 'Email';                            
+                                }
+                                $typeTitle .= ' User';
+                            ?>
+                            <td align="center"><?php echo $this->Html->link($getData['User']['type'],"javascript:Void(0);",array('escape' =>false,'title' => $typeTitle));?></td>
+                            <td><?php echo $getData['User']['username'];?></td>
+                            <td><?php echo $getData['User']['first_name'];?></td>
+                            <td><?php echo $getData['User']['last_name'];?></td>
+                            <td><?php echo $getData['User']['email'];?></td>
+                            <td align="center"><?php
+                                $status = ($getData['User']['status'] == 1) ? 'active' : 'inactive';
+                                echo $this->Html->image("admin/".$status.".png", array("alt" => ucfirst($status),"title" => ucfirst($status)));
+                            ?></td>
+                            <td align="center"><?php echo date('M j, Y',strtotime($getData['User']['created']));?></td>                            
+                            <td align="center">
+                            <?php
+                                
+                                $blocked = ($getData['User']['blocked'] == 0) ? 'unblocked' : 'blocked';
+                                $blockedText = ($getData['User']['blocked'] == 0) ? 'blocked' : 'unblocked';
+                                
+                                echo $this->Html->link($this->Html->image("admin/user_profile.png", array("alt" => "User Profile","title" => "User Profile")),"/admin/users/user_profile/".base64_encode($getData['UserProfile']['id']),array('escape' =>false,'class' => 'fancybox fancybox.ajax'));
+                                
+                                echo $this->Html->link($this->Html->image("admin/edit.png", array("alt" => "Edit","title" => "Edit")),"/admin/users/addedit/".base64_encode($getData['User']['id']),array('escape' =>false));
+                                echo $this->Html->link($this->Html->image("admin/delete.png", array("alt" => "Edit","title" => "Delete")),"/admin/users/delete/".base64_encode($getData['User']['id']),array('escape' =>false),"Are you sure you wish to delete this user?");
+                                
+                                echo $this->Html->link($this->Html->image("admin/".$blocked.".png", array("alt" => $blockedText,"title" => ucfirst($blockedText))),"/admin/users/user_blocked/".base64_encode($getData['User']['id']).'/'.base64_encode($getData['User']['blocked']),array('escape' =>false),"Are you sure you wish to ".str_replace('_'," ",$blockedText)." this user?");
+
+                                
+                            ?>
+                            
+                            </td>                    
+                        </tr>
+                        <?php
+                            $i++;
+                        } ?>
+                    </tbody>
+                    
+                </table>
+                <div class="row padding_btm_20 ">
+                     <div class="col-lg-2">   
+                          <?php echo $this->Html->image("admin/delete.png"). " Delete"; ?>
+                     </div>
+                     <div class="col-lg-2">   
+                          <?php echo $this->Html->image("admin/edit.png"). " Edit"; ?>
+                     </div>
+                     
+                     <div class="col-lg-2">   
+                          <?php echo $this->Html->image("admin/user_profile.png"). " User Profile"; ?>
+                     </div>
+                     
+                 
+                 </div>
+                <?php
+                    if($this->Paginator->param('pageCount') > 1)
+                    {
+                        echo $this->element('admin/pagination');                 
+                    }
+                }else{ 
+                    echo $this->element('admin/no_record_exists');
+                } ?>
+            </div>
+        </div>         
+    </div><!-- /.row -->
+    <?php
+        if($recordExits)
+        {
+            echo $this->element('admin/operation');  // Active/ Inactive/ Delete
+        }
+    echo $this->Form->end();
+    ?>
+    

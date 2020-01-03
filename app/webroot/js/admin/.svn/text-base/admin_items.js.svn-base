@@ -1,0 +1,143 @@
+    jQuery(document).ready(function()
+    {
+        
+        //For image check
+        var totalPicsallowed = jQuery('#totalpIcCount').val();
+        var torlpcsOld = jQuery('#oldpiccount').attr('ttlCount');
+
+        if(torlpcsOld >= totalPicsallowed){ 
+            jQuery('#mainimgcontainer').hide();
+            
+        }
+        jQuery("#itemsAdd").validate(
+        {	
+            errorElement: "span",
+            rules: {	                 
+                "data[Item][name]": {
+                    required: true
+                },
+                "data[Item][brand_id]": {
+                    required: true
+                },
+                "data[Item][category_id]": {
+                    required: true
+                },
+                "data[Item][description]": {
+                    required: true
+                },
+                "data[Item][item_type]": {
+                    required: true
+                },                
+                "data[Item][other_item_size]": {
+                    required: true
+                },                
+                "data[Item][dress_size]": {
+                    required: true
+                },                
+                "data[Item][shoe_size]": {
+                    required: true
+                },                
+                "data[Item][price]": {
+                    required: true
+                }
+            },
+             messages: {
+                "data[Item][name]": {
+                    required: "Please enter item name."                    
+                },
+                "data[Item][brand_id]": {
+                    required: "Please select brand."                    
+                },
+                "data[Item][category_id]": {
+                    required: "Please select category."                    
+                }
+                ,
+                "data[Item][item_type]": {
+                    required: "Please select item type."                    
+                }
+            }         
+        });
+        jQuery('#itemTypeRadio input[type="radio"]').click(function() {
+            var myval = jQuery(this).val();
+            if(myval == 'D'){
+                jQuery('#dressSizediv').show();
+                jQuery('#Shoesizediv').hide();
+                jQuery('#otherItemsizediv').hide();
+            }
+            if(myval == 'S'){
+                jQuery('#Shoesizediv').show();
+                jQuery('#dressSizediv').hide();
+                jQuery('#otherItemsizediv').hide();
+            }
+            if(myval == 'O'){
+                jQuery('#otherItemsizediv').show();
+                jQuery('#Shoesizediv').hide();
+                jQuery('#dressSizediv').hide();
+            }
+           
+          });
+     // function to add new uploader using add more functionality     
+        jQuery(document).on('click','.addnewuploaderlink',function(){
+            var totalPicLimit = jQuery('#totalpIcCount').val();
+           
+            var picCount = totalPicLimit - 1;
+            var oldPiccount = jQuery('#oldpiccount').attr('ttlCount');
+            var finalCount = picCount - oldPiccount;
+         
+            if(finalCount > 0){
+                
+                    //if(n < finalCount){
+                        var html = '<div class="row"><div class="col-lg-8"><div class="col-lg-12"><div class="form-group form-spacing newDynInputs"><div class="col-lg-2 form-label">&nbsp;</div><div class="col-lg-8 form-box"><input id="ItemImage1" class="valid" type="file" style ="display:inline-block !important;" ><a class="removeFilelink" href="javascript:void(0)">&nbsp;Remove</a></div><div class="col-lg-2"></div></div></div></div></div>';
+                        jQuery('#adduploader').append(html);
+                        var n = $( "#adduploader input" ).length;
+                       
+                         jQuery('#totalpIcCount').val(picCount);
+                        changeName();
+                    //}     
+            }else{ 
+                jQuery('.addnewuploaderlink').hide();
+            }
+        });
+        jQuery(document).on('click','.removeFilelink',function(){
+            $( ".newDynInputs" ).last().remove();
+            var totalCount =  jQuery('#totalpIcCount').val();
+            var newCount= parseInt(totalCount) + parseInt(1);
+           
+            jQuery('#totalpIcCount').val(newCount)
+                 var n = $( ".newDynInputs input" ).length;
+                 
+                 if(n == 2){
+                    $( ".addnewuploaderlink" ).show();
+                 }
+            });
+       // function to delete image   
+        jQuery(document).on('click','.deleteimgLnk',function(){
+            var itemId = jQuery(this).attr('itmId');
+                $.ajax({
+                    type: "GET",
+                    url: "/items/delete_pic/"+itemId,
+                    success: function(result){
+                                if(result){
+                                    var divId = '#div_image_'+itemId; 
+                                    jQuery(divId).remove();
+                                    var oldPiccount = jQuery('#oldpiccount').attr('ttlCount');
+                                    var newcountOldPic = oldPiccount-1;
+                                    jQuery('#oldpiccount').attr('ttlCount',newcountOldPic);
+                                    var totalPicLimit = jQuery('#totalpIcCount').val();
+                                    if(newcountOldPic < totalPicLimit){
+                                       jQuery('#mainimgcontainer').show();
+                                       jQuery('.addnewuploaderlink').show();
+                                        
+                                    }
+                                }
+                            }
+                });
+                
+        });
+    }); 
+     function changeName(){
+            $('#adduploader input').each(function(i) {
+                 $(this).attr('name','data[ItemImage][image_name]['+(i+1)+']');
+                
+            });
+        }

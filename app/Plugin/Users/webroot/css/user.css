@@ -1,0 +1,17 @@
+@import "/app/webroot/css/backend.css";
+
+.letters li.widthFirst {
+    width: 13%;
+}
+.letters li {
+    float: left;
+    list-style: none outside none;
+    text-align: left;
+    width: 3%;
+}
+.letters {
+    border-bottom: 1px solid #E6E6E6;
+    border-top: 1px solid #E6E6E6;
+    margin: 0 18px 0 16px;
+    padding: 5px 0;
+}

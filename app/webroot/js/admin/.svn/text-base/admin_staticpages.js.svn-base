@@ -1,0 +1,18 @@
+  jQuery(document).ready(function()
+    {
+        jQuery("#staticPageFormId").validate(
+        {	
+            errorElement: "div",
+            rules: {	                 
+                "data[Staticpage][title]": {
+                    required: true
+                }
+            },
+             messages: {
+                "data[Staticpage][title]": {
+                    required: "Please enter the page title."                    
+                }
+            }         
+        });
+    }); 
+    

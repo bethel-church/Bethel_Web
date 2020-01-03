@@ -1,0 +1,18 @@
+    jQuery(document).ready(function()
+    {
+        jQuery("#faqId").validate(
+        {	
+            errorElement: "div",
+            rules: {	                 
+                "data[Faq][title]": {
+                    required: true
+                }
+            },
+             messages: {
+                "data[Faq][title]": {
+                    required: "Please enter the faq title."                    
+                }
+            }         
+        });
+    }); 
+    

@@ -1,0 +1,113 @@
+    <div id="fb-root"></div>
+    <?php  echo $this->Html->script('frontend/signup');
+           echo $this->Html->script('frontend/facebook');           
+           echo $this->Html->script('jcrop/ajaxuploader');
+    ?>  
+    <section class="login-frame">        
+        <section class="social-btns">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>     	
+            <section class="socialbtn">
+                 <?php echo $this->Html->link($this->Html->image("frontend/signup_facebook.png", array("alt" => "Connect Facebook","title" => "Connect Facebook")),"javascript:void(0);",array('escape' =>false, 'onclick' => "login_facebook('".BASE_PATH."');"));?>
+                
+                </section>
+            <section class="socialbtn">
+                  <?php echo $this->Html->link($this->Html->image("frontend/signup_twitter.png", array("alt" => "SIGN UP TWITTER ACCOUNT","title" => "SIGN UP TWITTER ACCOUNT")),"javascript:void(0);",array('escape' =>false,"title" => "SIGN UP TWITTER ACCOUNT", 'id'=>'twitterId', 'onclick' => "login_twitter('".BASE_PATH."');"));?>
+                
+                </section>
+        </section>  
+        
+        
+        <?php if($change_text == 0) { ?>
+        <h1 class="heading">Sign up with your email</h1>
+        <?php } ?>
+        
+        <?php if($change_text == 1) { ?>
+        <div id="flashMessage" class="sign_up_message">
+            <?php echo $this->Session->flash();?>  
+        </div>
+        <?php } ?>
+        
+        
+        <?php   echo $this->Form->create(null, array('url' => array('controller' => 'users', 'action' => 'signup'),'id'=>'signupId','type' => 'file'));        
+                $type = (isset($this->data['User']['type'])) ? $this->data['User']['type'] : 'D';
+                $F_ID = (isset($this->data['User']['F_ID'])) ? $this->data['User']['F_ID'] : 0;                
+                echo $this->Form->hidden('type',array('value'=> $type));
+                echo $this->Form->hidden('F_ID',array('value'=> $F_ID));
+        ?>
+        
+        <div id="flashMessage" class="error_message">
+            <?php echo $this->Session->flash();?>  
+        </div>
+        <ul class="form_widget">
+            <li>
+                <section class="clearfix">
+                    <section class="section_col">
+                        <label>First name <span class="star">*</span></label>
+                        <p class="padrt">                            
+                            <?php echo $this->Form->input('first_name',array('label' => false,'div' => false, 'placeholder' => 'First name','class' => 'textfield fullwidth','maxlength' => 55));?>
+                        </p>
+                    </section>
+                    
+                    <section class="section_col fl-rt">
+                        <label>last name <span class="star">*</span></label>
+                        <p class="padrt">
+                            <?php echo $this->Form->input('last_name',array('label' => false,'div' => false, 'placeholder' => 'Last Name','class' => 'textfield fullwidth','maxlength' => 55));?>
+                        </p>
+                    </section>
+                </section>
+            </li>
+            <li>
+                <label>Email address <span class="star">*</span></label>
+                <p class="padrt">
+                    <?php echo $this->Form->input('email',array('label' => false,'div' => false, 'placeholder' => 'Email','class' => 'textfield fullwidth','maxlength' => 55,'type' => 'text'));?>
+                </p>
+                
+            </li>
+            <li>
+                <label>Username <span class="star">*</span></label>
+                <p class="padrt">
+                    <?php echo $this->Form->input('username',array('label' => false,'div' => false, 'placeholder' => 'Username','class' => 'textfield fullwidth','maxlength' => 30));?>
+                </p>
+            </li>
+            <li>
+                <label>Password <span class="star">*</span></label>
+                <p class="padrt">                    
+                    <?php echo $this->Form->input('password',array('label' => false,'div' => false, 'placeholder' => 'Password','class' => 'textfield fullwidth','maxlength' => 30,'type'=>'password'));?>
+                    
+                </p>
+            </li>
+            <li>
+                <section class="clearfix">
+                    <section class="uploadpic" id="userProfilePicId">
+                        <?php echo $this->Html->image("frontend/profile_pic.png", array("alt" => "profile image","title" => "profile image"));?>
+                    </section>
+                    <span style="position:relative;" class="button graybtn">
+                        <font style="font-weight:bold; color:#093; position:relative; top:2px; font-size:17px;">+</font>Add
+                            <?php echo $this->Form->input('temp_image',array('type'=>'file','div'=>false,'label'=>false,'id' => 'tempImageId','class'=>'uploadFile')); ?>
+                    </span>                    
+                     <span id ="loadingContainerId" class="signuploader display_none">		
+                            <?php echo $this->Html->image('signup-ajax-loader.gif', array('alt' => 'Loading...','title' => 'Loading...'));?>
+                     </span>	                    
+                </section>
+                <section id="removeImageErrorId">
+                     <?php echo $this->Form->text('image',array('value'=> '','label'=>false,'id' => 'userImageId','class' => 'imageinputbox')); ?>
+                </section>
+            </li>
+            
+            <li class="buttonwdget clearfix">
+                <section class="agree">By creating an account, I accept <a href="#">Terms</a> and <a href="#">Privacy Policy</a></section>                
+                <?php                
+                  if($change_text == 0) {
+                    $btn_text = 'Next';
+                  }
+                  if($change_text == 1) {
+                    $btn_text = 'Continue';
+                  }
+                  echo $this->Form->button($btn_text, array('type' => 'submit','class' => 'button loginbtn'));?>
+                
+            </li>
+        </ul>
+         <?php echo $this->Form->end(); ?>   
+        </section>
+        <section id="imageCropDivId"></section>    
+    </section>

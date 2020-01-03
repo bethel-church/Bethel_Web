@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Admins
+END
+admin_forgot_password.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Admins/admin_forgot_password.ctp
+END
+admin_secure_check.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Admins/admin_secure_check.ctp
+END
+admin_add_newsletter.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Admins/admin_add_newsletter.ctp
+END
+admin_dashboard.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Admins/admin_dashboard.ctp
+END
+admin_index.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Admins/admin_index.ctp
+END
+admin_changepassword.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Admins/admin_changepassword.ctp
+END
+admin_login.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Admins/admin_login.ctp
+END
+admin_addedit.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Admins/admin_addedit.ctp
+END
+admin_newsletters.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Admins/admin_newsletters.ctp
+END

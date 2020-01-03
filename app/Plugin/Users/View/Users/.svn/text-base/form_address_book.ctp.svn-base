@@ -1,0 +1,52 @@
+	<?php echo $this->Html->script('frontend/address_book'); ?>
+	<section class="con-frame font14 twocol clearfix">	
+	<?php   echo $this->Form->create('UserAddress', array('url' => array('controller' => 'users', 'action' => 'form_address_book'),'id'=>'address_book_Id'));	
+			echo $this->Form->hidden('UserAddress.id',array('value'=> $id = (isset($this->data['UserAddress']['id'])) ? $this->data['UserAddress']['id'] : ''));
+	?>			
+		 <section class="address-frame">   
+			<h1 class="head">Add Address</h1>
+			<ul class="form_widget">				
+				<li>
+					<label>Name</label>
+					<p class="padrt">
+					 <?php echo $this->Form->input($addressType.'_name',array('label' => false,'div' => false, 'placeholder' => 'Name','class' => 'textfield fullwidth','maxlength' => 30));?>				
+					</p>
+				</li>				
+				<li>
+					<label>Street</label>
+					<p class="padrt">
+					 <?php echo $this->Form->input($addressType.'_street',array('label' => false,'div' => false, 'placeholder' => 'Street','class' => 'textfield fullwidth','maxlength' => 100));?>				
+					</p>
+				</li>
+				<li>
+					<label>Street2</label>
+					<p class="padrt">
+					 <?php echo $this->Form->input($addressType.'_street2',array('label' => false,'div' => false, 'placeholder' => 'Street2','class' => 'textfield fullwidth','maxlength' => 100));?>				
+					</p>
+				</li>				
+				<li>
+					<label>City</label>
+					<p class="padrt">
+					 <?php echo $this->Form->input($addressType.'_city',array('label' => false,'div' => false, 'placeholder' => 'City','class' => 'textfield fullwidth','maxlength' => 30));?>				
+					</p>
+				</li>				
+				<li>
+					<label>State</label>
+					<p class="padrt">
+					 <?php echo $this->Form->input($addressType.'_state', array('label' => false,'div' => false,'options' => $statelist,'empty' => 'Choose State','class' => 'select fullwidth')); ?>
+					</p>
+				</li>				
+				<li>
+					<label>Zip</label>
+					<p class="padrt">
+					 <?php echo $this->Form->input($addressType.'_zip',array('label' => false,'div' => false, 'placeholder' => 'Zip','class' => 'textfield fullwidth','maxlength' => 20));?>				
+					</p>
+				</li>
+				<li class="buttonwdget clearfix">
+					<?php echo $this->Form->button('Cancel', array('type' => 'button','class' => 'button graybtn fl-lt','onclick' => 'javascript:jQuery.fancybox.close();'));?>
+					<?php echo $this->Form->button('Add', array('type' => 'submit','class' => 'button fl-rt'));?>
+				</li>					
+			</ul>		 
+		</section>
+		<?php echo $this->Form->end(); ?>  		
+	</section>

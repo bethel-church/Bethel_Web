@@ -1,0 +1,43 @@
+    <?php
+           
+           echo $this->Html->script('jcrop/jquery.Jcrop');
+           echo $this->Html->script('frontend/crop_image');
+           echo $this->Html->css('jcrop/jquery.Jcrop');           
+           echo $this->Html->css('style');           
+           ?>
+   
+    <div class="cropimage-overlay cropimage-overlay-fixed" style="display:block;">                         
+       <div tabindex="-1" class="cropimage-widget"> 
+           
+           <div class="cropimage-skin">
+               <?php echo $this->Form->create(null, array('url' => array('controller' => 'users', 'action' => 'upload_crop_image'),'id'=>'formCropImageId')); ?>
+               <div class="cropimage-outer">
+                       <div class="cropimage-inner">
+                           <?php
+                           echo $this->Html->image("crop_image/thumb/".trim($image_name), array("alt" => "Image","title" => "Image", 'id' => 'cropImageId'));
+                           echo $this->Form->hidden('Crop.image_name',array('value'=> $image_name,'id' => 'image_id'));
+                           echo $this->Form->hidden('Crop.coords_x',array('id'=> 'coords_x'));
+                           echo $this->Form->hidden('Crop.coords_y',array('id'=> 'coords_y'));
+                           echo $this->Form->hidden('Crop.coords_w',array('id'=> 'coords_w'));
+                           echo $this->Form->hidden('Crop.coords_h',array('id'=> 'coords_h'));                        
+                           ?>
+                           
+                           <div class="clearfix centeredbuttons paddingbtm0">                        
+                               <?php echo $this->Form->button("Cancel", array('type' => 'button','class' => 'button graybtn','id' => 'btnCancelImageId'));?>
+                               <?php echo $this->Form->button("Crop", array('type' => 'button','class' => 'button graybtn','id' => 'btnCropImageId'));?>                               
+                           </div>
+                           
+                         
+                       </div>
+               </div>
+               
+               <?php echo $this->Form->end(); ?>   
+               
+           </div>
+       </div>
+      </div>
+       
+    
+    
+    
+    

@@ -1,0 +1,2 @@
+<?php echo $imageName;
+//echo $this->Html->image("users/".$imageName, array("alt" => "profile image","title" => "profile image"));?>

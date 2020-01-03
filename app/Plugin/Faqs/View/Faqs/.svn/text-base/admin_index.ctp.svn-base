@@ -1,0 +1,109 @@
+    <?php
+        $recordExits = false;            
+        if(isset($getData) && !empty($getData))
+        {
+           $recordExits = true;            
+        }    
+        echo $this->Form->create('Search', array('url' => array('controller' => 'faqs', 'action' => 'index'),'id'=>'titleId'));  ?>
+        <div class="row padding_btm_20">
+            <div class="col-lg-2">   
+                 <?php echo $this->Form->input('keyword',array('label' => false,'div' => false, 'placeholder' => 'Search','class' => 'form-control','maxlength' => 55));?>
+            </div>
+            <div class="col-lg-2">   
+                 <?php echo $this->Form->input('show', array('label' => false,'div' => false,'options' => array('1' => 'Active', '0' => 'Inactive'),'class' => 'form-control','id' => 'showId','empty'=>'-Select Status-'));?>      
+            </div>
+            <div class="col-lg-2">                        
+                <?php echo $this->Form->button('Search', array('type' => 'submit','class' => 'btn btn-default'));?>
+            </div>
+            <div class="col-lg-6">    
+                <div class="addbutton">                
+                    <?php echo $this->Html->link('Add Faq','/admin/faqs/addedit',array('class' => 'icon-file-alt','title' => 'Add Faq'));?>
+                </div>
+            </div>
+        </div>
+        <?php echo $this->Form->end();    
+    ?>
+    
+    <div class="row">
+        <div class="col-lg-4">                        
+             <?php echo $this->Session->flash();?>   
+        </div>            
+    </div>
+    
+    <?php echo $this->Form->create('Faq', array('url' => array('controller' => 'faqs', 'action' => 'index'),'id'=>'FaqFormId'));  ?>
+    
+    <div class="row">
+        <div class="col-lg-12">            
+            <div class="table-responsive">               
+                 
+                <?php if($recordExits)
+                { ?>
+                <table class="table table-bordered table-hover table-striped tablesorter">
+                    <thead>
+                        <tr>
+                            <th class="th_checkbox"><input type="checkbox" class="checkall"></th>
+                            <th><?php echo $this->Paginator->sort('title', 'Questions'); ?></th>
+                            <th class="th_checkbox"><?php echo $this->Paginator->sort('status', 'Status'); ?> </th>
+                            <th class="th_checkbox"><?php echo $this->Paginator->sort('created', 'Created'); ?> </th>                            
+                            <th class="th_checkbox">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="dyntable">
+                        <?php
+                        $i = 0;
+                        
+                        foreach($getData as $key => $getData)
+                        {
+                            $class = ($i%2 == 0) ? ' class="active"' : '';
+                            ?>
+                        <tr <?php echo $class;?>>
+                            <td align="center"><input type="checkbox" name="checkboxes[]" class ="checkboxlist" value="<?php echo base64_encode($getData['Faq']['id']);?>" ></td>
+                            <td><?php echo $getData['Faq']['title'];?></td>
+                            <td align="center"><?php
+                                $status = ($getData['Faq']['status'] == 1) ? 'active' : 'inactive';
+                                echo $this->Html->image("admin/".$status.".png", array("alt" => ucfirst($status),"title" => ucfirst($status)));
+                            ?></td>
+                            <td align="center"><?php echo date('M j, Y',strtotime($getData['Faq']['created']));?></td>                            
+                            <td align="center">
+                            <?php
+                                echo $this->Html->link($this->Html->image("admin/edit.png", array("alt" => "Edit","title" => "Edit")),"/admin/faqs/addedit/".base64_encode($getData['Faq']['id']),array('escape' =>false));
+                                echo $this->Html->link($this->Html->image("admin/delete.png", array("alt" => "Edit","title" => "Delete")),"/admin/faqs/delete/".base64_encode($getData['Faq']['id']),array('escape' =>false),"Are you sure you wish to delete this title?");
+                            ?>
+                            
+                            </td>                    
+                        </tr>
+                        <?php
+                            $i++;
+                        } ?>
+                    </tbody>
+                    
+                </table>
+                <div class="row padding_btm_20 ">
+                     <div class="col-lg-2">   
+                          <?php echo $this->Html->image("admin/delete.png"). " Delete"; ?>
+                     </div>
+                     <div class="col-lg-2">   
+                          <?php echo $this->Html->image("admin/edit.png"). " Edit"; ?>
+                     </div>
+                     
+                 
+                 </div>
+                <?php
+                    if($this->Paginator->param('pageCount') > 1)
+                    {
+                        echo $this->element('admin/pagination');                 
+                    }
+                }else{ 
+                    echo $this->element('admin/no_record_exists');
+                } ?>
+            </div>
+        </div>         
+    </div><!-- /.row -->
+    <?php
+        if($recordExits)
+        {
+            echo $this->element('admin/operation');  // Active/ Inactive/ Delete
+        }
+    echo $this->Form->end();
+    ?>
+    

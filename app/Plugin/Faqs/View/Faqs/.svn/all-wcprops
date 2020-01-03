@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Faqs
+END
+admin_index.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Faqs/admin_index.ctp
+END
+admin_addedit.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Faqs/admin_addedit.ctp
+END
+index.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Faqs/index.ctp
+END

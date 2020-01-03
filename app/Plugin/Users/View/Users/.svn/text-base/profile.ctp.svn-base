@@ -1,0 +1,47 @@
+    <?php  echo $this->Html->script('frontend/userprofile');?>
+    <section class="login-frame">       
+        <h1 class="heading">Enter profile info</h1>        
+        <?php echo $this->Form->create('UserProfile', array('url' => array('controller' => 'users', 'action' => 'profile'),'id'=>'profileId')); ?>
+        <ul class="form_widget">            
+            <li>
+                <label>Shoe Size </label>
+                <p class="padrt">
+                    <?php echo $this->Form->input('shoe_size', array('label' => false,'div' => false,'options' => $shoeSize,'empty' => 'Choose Size','class' => 'select fullwidth')); ?>
+                </p>                
+            </li>
+            <li>
+                <label>Dress Size </label>
+                <p class="padrt">                    
+                    <?php echo $this->Form->input('dress_size', array('label' => false,'div' => false,'options' => $dressSize,'empty' => 'Choose Size','class' => 'select fullwidth')); ?>
+                </p>                
+            </li>
+            <li>
+                <section class="clearfix">
+                    <section class="section_col">
+                        <label>Location </label>
+                        <p class="padrt">                            
+                            <?php echo $this->Form->input('city',array('label' => false,'div' => false, 'placeholder' => 'City','class' => 'textfield fullwidth','maxlength' => 55));?>
+                        </p>
+                    </section>                    
+                    <section class="section_col fl-rt">
+                        <label>&nbsp;</label>
+                        <p class="padrt">                            
+                            <?php echo $this->Form->input('state', array('label' => false,'div' => false,'options' => $statelist,'empty' => 'Choose State','class' => 'select fullwidth')); ?>
+                        </p>
+                    </section>
+                </section>
+            </li>            
+            <li>
+                <label>Website </label>
+                <p class="padrt">
+                    <?php echo $this->Form->input('website',array('label' => false,'div' => false, 'placeholder' => 'Website','class' => 'textfield fullwidth','maxlength' => 30));?>
+                </p>
+            </li>
+            <li class="buttonwdget clearfix">
+                <section class="agree">By creating an account, I accept <a href="#">Terms</a> and <a href="#">Privacy Policy</a></section>                
+                <?php echo $this->Form->button("Next", array('type' => 'submit','class' => 'button loginbtn'));?>
+            </li>
+        </ul>
+         <?php echo $this->Form->end(); ?>   
+        </section>
+    </section>

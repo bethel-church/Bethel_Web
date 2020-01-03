@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Elements/admin
+END
+footer.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Elements/admin/footer.ctp
+END
+navigation.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Elements/admin/navigation.ctp
+END
+operation.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Elements/admin/operation.ctp
+END
+no_record_exists.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Elements/admin/no_record_exists.ctp
+END
+pagination.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Elements/admin/pagination.ctp
+END

@@ -1,0 +1,80 @@
+   <?php
+   echo $this->Html->script('admin/admin_users');?>    
+   <div class="row">
+      <div class="col-lg-12">                        
+          <div class="addbutton">                
+                  <?php echo $this->Html->link('Back','/admin/users/',array('class' => 'icon-file-alt','title' => 'Back'));?>
+          </div>
+      </div>
+   </div>   
+   <div class="row">        
+      <?php echo $this->Form->create(null, array('url' => array('controller' => 'users', 'action' => 'addedit'),'id'=>'userId'));              
+            echo $this->Form->hidden('User.id',array('value'=>base64_encode($this->data['User']['id'])));            
+            echo $this->Form->hidden('User.profile_id',array('value'=>base64_encode($this->data['UserProfile']['id'])));            
+            $type = (!empty($this->data['User']['type'])) ? $this->data['User']['type'] : 'D';
+            echo $this->Form->hidden('User.type',array('value'=>$type)); 
+      ?>
+         <div class="col-lg-5">
+            <div class="col-lg-12">
+               <div class="form-group form-spacing">
+                  <div class="col-lg-4 form-label">
+                     <label>UserName<span class="required"> * </span></label>
+                  </div>
+                  <div class="col-lg-8 form-box">                
+                     <?php echo $this->Form->input('username',array('label' => false,'div' => false, 'placeholder' => 'UserName','class' => 'form-control','maxlength' => 55,'readonly' => 'readonly'));?>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-12">
+               <div class="form-group form-spacing">
+                  <div class="col-lg-4 form-label">
+                     <label>First Name<span class="required"> * </span></label>
+                  </div>
+                  <div class="col-lg-8 form-box">                
+                     <?php echo $this->Form->input('first_name',array('label' => false,'div' => false, 'placeholder' => 'First Name','class' => 'form-control','maxlength' => 55));?>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-12">
+               <div class="form-group form-spacing">
+                  <div class="col-lg-4 form-label">
+                     <label>Last Name<span class="required"> * </span></label>
+                  </div>
+                  <div class="col-lg-8 form-box">                
+                     <?php echo $this->Form->input('last_name',array('label' => false,'div' => false, 'placeholder' => 'Last Name','class' => 'form-control','maxlength' => 55));?>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-12">
+               <div class="form-group form-spacing">
+                  <div class="col-lg-4 form-label">
+                     <label>Email<span class="required"> * </span></label>
+                  </div>
+                  <div class="col-lg-8 form-box">                
+                     <?php echo $this->Form->input('email',array('label' => false,'div' => false, 'placeholder' => 'Email','class' => 'form-control','maxlength' => 55,'readonly' => 'readonly'));?>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-12">
+               <div class="form-group form-spacing">
+                  <div class="col-lg-4 form-label"> 
+                     <label>Status</label>
+                  </div>
+                  <div class="col-lg-8 form-box">  
+                     <label class="checkbox-inline">
+                        <?php echo $this->Form->input('status',array('label' => false,'div' => false,'type '=> 'checkbox', 'checked' => ($this->request->data['User']['status']) ? 'checked' : ''));?>
+                     </label>
+                  </div>
+               </div>
+            </div>      
+            <div class="col-lg-12 form-spacing">
+               <div class="col-lg-4"><!--blank Div--></div>
+               <div class="col-lg-8 form-box">
+                 <?php echo $this->Form->button($action, array('type' => 'submit','class' => 'btn btn-default'));?>
+                 &nbsp;
+                 <?php echo $this->Form->button('Reset', array('type' => 'reset','class' => 'btn btn-default'));?>                 
+               </div>
+            </div>
+         </div>   
+      <?php echo $this->Form->end(); ?>           
+   </div><!-- /.row -->

@@ -1,0 +1,51 @@
+		<?php echo $this->Html->script('frontend/form/customInput.jquery');?>
+		<script type="text/javascript">
+			jQuery(function () {
+				jQuery('input').customInput();
+			});
+		</script>
+		<section class="con-frame font14 twocol clearfix">
+				<section class="leftcontent">
+					<?php echo $this->element('front/user_left_menu'); ?>   
+				</section>
+        <?php   echo $this->Form->create('UserSetting', array('url' => array('controller' => 'users', 'action' => 'sharing_settings'),'id'=>'sharingId','type' => 'file'));
+				echo $this->Form->hidden('id',array('value'=> $id = (!empty($this->data['UserSetting']['id'])) ? $this->data['UserSetting']['id'] : '' ));
+				?>
+				<section class="rightcontent">
+					<h1 class="head">Sharing Settings</h1>
+					<ul class="form_widget  acc-form">		
+						<li>
+								<label>Timeline Autoshare</label>	
+								<section class="user-setting_rt">	
+										<section class="clearfix">																									
+												<?php 														
+												$timelineON = (isset($this->data['UserSetting']['timeline']) && ($this->data['UserSetting']['timeline'] == 1)) ? 'checked="checked"' : '';
+												$timelineOFF = ($timelineON == '') ? 'checked="checked"' : '';?>														
+												<input type="radio" value="1" id="timeline1" name="timeline" <?php echo $timelineON;?>>
+												<label for="timeline1">ON</label>	
+												<input type="radio" value="0" id="timeline0" name="timeline" <?php echo $timelineOFF;?>>
+												<label for="timeline0">OFF</label>
+									</section>
+								</section>
+						</li>								
+						<li>
+								<label>Search Visibility</label>																											
+								<section class="user-setting_rt">		
+										<section class="clearfix">																									
+												<?php 														
+												$searchON = (isset($this->data['UserSetting']['search_visibility']) && ($this->data['UserSetting']['search_visibility'] == 1)) ? 'checked="checked"' : '';
+												$searchOFF = ($searchON == '') ? 'checked="checked"' : '';?>														
+												<input type="radio" value="1" id="search1" name="search_visibility" <?php echo $searchON;?>>
+												<label for="search1">ON</label>																												
+												<input type="radio" value="0" id="search0" name="search_visibility" <?php echo $searchOFF;?>>
+												<label for="search0">OFF</label>
+									</section>
+										
+							</section>
+						</li>
+						<li class="buttonwdget clearfix">                        										
+								<?php echo $this->Form->button('Save Settings', array('type' => 'submit','class' => 'button fl-rt'));?>
+						</li>								
+					</ul>						
+				</section>            
+    </section>

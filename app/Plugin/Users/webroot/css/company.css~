@@ -1,0 +1,32 @@
+.blue{color:#2A70BB; font-size: 12px; font-style: italic;}
+.addbutton{
+    float:right;
+    padding-bottom:10px;
+}
+.oprdiv{padding:0px 14px 12px 14px;}
+.actiondivinr{background:#222222; padding:5px 10px;}
+.table td a{padding: 0 2px;}
+.table th a{color: #FFFFFF;}
+.table{margin-bottom:0;}
+.table thead{background: #222222; color:#fff;}
+.table th:hover{ color: #000 !important;}
+.table th:hover a { color:#000; }
+.form-control{
+    font-size:14px !important;
+    color: #555555 !important;
+    padding: 6px 12px !important;
+}
+  
+.form-control:-moz-placeholder {
+    color: #999999 !important;
+}
+.form-box{padding:0;}
+.form-label{padding:7px 0; text-align:left;}
+.form-box{padding:0;}
+.form-spacing {margin-bottom:5px; overflow:hidden;}
+.form-group.control_comm {
+    float: left;
+    width: 100%;
+    height:auto;
+}
+.form-group.form_margin.control_comm > label {float:left;}

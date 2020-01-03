@@ -1,0 +1,36 @@
+<?php  echo $this->Html->script('frontend/facebook');
+       echo $this->Html->script('frontend/twitter');  
+       echo $this->Html->script('frontend/login');?>    
+    <section class="login-frame">
+        <section class="social-btns">
+            <section class="socialbtn">
+                <?php echo $this->Html->link($this->Html->image('frontend/signin_facebook.png'),'javascript:void(0)',array('escape' => false, 'onclick' => "login_facebook('".BASE_PATH."');"));?>
+            </section>
+            <section class="socialbtn">                
+                <?php echo $this->Html->link($this->Html->image('frontend/signin_twitter.png', array("alt" => "Connect Twitter","title" => "Connect Twitter")),"javascript:void(0)",array('escape' =>false,'id' => 'twitterId'));?>
+            </section>
+        </section>  
+        <h1 class="heading">Login with your username</h1>
+         <?php echo $this->Form->create(null, array('url' => array('controller' => 'users', 'action' => 'login'),'id'=>'loginId'));
+               echo $this->Session->flash();?>  
+         
+         
+        <ul class="form_widget">            	          
+            <li>
+                <label>Username <span class="star">*</span></label>
+                <p class="padrt">                    
+                    <?php echo $this->Form->input('username',array('label' => false,'div' => false, 'placeholder' => 'Username or Email','class' => 'textfield fullwidth','maxlength' => 55));?>
+            </li>
+            <li>
+                <label>Password <span class="star">*</span></label>
+                <p class="padrt">
+                    <?php echo $this->Form->input('password',array('label' => false,'div' => false, 'placeholder' => 'Password','class' => 'textfield fullwidth','maxlength' => 55,'type' => 'password'));?>
+                </p>
+            </li>
+            <li class="buttonwdget clearfix">
+                <section class="agree"><?php echo $this->Html->link('Forgot password?',array('controller'=>'users','action'=>'forgot_password'),array('escape'=>false)); ?></section>
+                <input type="submit" value="Login" class="button loginbtn" name="button">
+            </li>
+        </ul>
+    </section>
+     <?php echo $this->Form->end(); ?>

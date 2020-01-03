@@ -1,0 +1,38 @@
+    jQuery(document).ready(function()
+    {
+        jQuery("#userId").validate(
+        {	
+            errorElement: "span",
+            rules: {	                 
+                "data[User][first_name]": {
+                    required: true
+                },
+                "data[User][last_name]": {
+                    required: true
+                },
+                 "data[User][email]": {
+                    required: true,
+                    email: true
+                },
+                "data[User][username]": {
+                    required: true
+                }
+            },
+             messages: {
+                "data[User][first_name]": {
+                    required: "Please enter your first name."                    
+                },
+                "data[User][last_name]": {
+                    required: "Please enter your last name."                    
+                },
+                 "data[User][email]": {
+                    required: "Please enter your e-mail address.",
+                    email: "Please enter a valid email address."
+                },
+                "data[User][username]": {
+                    required: "Please enter a preferred username."                    
+                }
+            }         
+        });
+    }); 
+    

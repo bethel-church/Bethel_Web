@@ -1,0 +1,66 @@
+	<?php    
+	echo $this->Html->script('fancybox/jquery.fancybox');
+	echo $this->Html->css('fancybox/jquery.fancybox');    
+    ?>   
+   	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			jQuery('.fancybox').fancybox({
+                maxWidth	: 600,
+                maxHeight	: 900,
+                fitToView	: false,
+                width		: '70%',
+                height		: '100%',
+                autoSize	: false,
+                closeClick	: false,
+                openEffect	: 'none',
+                closeEffect	: 'none',
+				helpers     : { 
+					overlay : {closeClick: false} 
+				}	
+            });
+		});
+		</script>
+		<section class="con-frame font14 twocol clearfix">        									
+			<section class="leftcontent">
+					<?php echo $this->element('front/user_left_menu'); ?>   
+			</section>    
+			<section class="rightcontent">
+				<h1 class="head">My Address</h1>
+				<?php echo $this->Session->flash(); ?>
+				<ul class="form_widget  acc-form">		
+					<li>	
+						<h2 class="head">Default Shipping Address						
+						<span class="addresslink">
+							<?php echo $this->Html->link('Update Address',"/users/form_address_book/shipping/",array('escape' =>false,'class' => 'fancybox fancybox.ajax'));?>	
+						</span>
+						</h2>
+							<?php if(isset($userProfileInfo)) { ?>
+									<p><?php echo $name = !empty($userProfileInfo['UserAddress']['shipping_name']) ? $userProfileInfo['UserAddress']['shipping_name'] : '' ;?></p>
+									<p><?php echo $street = !empty($userProfileInfo['UserAddress']['shipping_street']) ? $userProfileInfo['UserAddress']['shipping_street'] : '' ;?></p>
+									<p><?php echo $street2 = !empty($userProfileInfo['UserAddress']['shipping_street2']) ? $userProfileInfo['UserAddress']['shipping_street2'] : '' ;?></p>
+									<p><?php echo $city = !empty($userProfileInfo['UserAddress']['shipping_city']) ? $userProfileInfo['UserAddress']['shipping_city'] : '' ;?></p>
+									<p><?php echo $state = !empty($userProfileInfo['UserAddress']['shipping_state']) ? $statelist[$userProfileInfo['UserAddress']['shipping_state']] : '' ;?></p>
+									<p><?php echo $zip = !empty($userProfileInfo['UserAddress']['shipping_zip']) ? $userProfileInfo['UserAddress']['shipping_zip'] : '' ;?></p>
+
+							<?php } ?>
+					</li>
+					<li>	
+						<h2 class="head">Default Return Address
+						<span class="addresslink">
+							<?php echo $this->Html->link('Update Address',"/users/form_address_book/return/",array('escape' =>false,'class' => 'fancybox fancybox.ajax'));?>
+						</span>
+						</h2>
+							<?php if(isset($userProfileInfo)) { ?>
+								<p><?php echo $name = !empty($userProfileInfo['UserAddress']['return_name']) ? $userProfileInfo['UserAddress']['return_name'] : '' ;?></p>
+								<p><?php echo $street = !empty($userProfileInfo['UserAddress']['return_street']) ? $userProfileInfo['UserAddress']['return_street'] : '' ;?></p>
+								<p><?php echo $street2 = !empty($userProfileInfo['UserAddress']['return_street2']) ? $userProfileInfo['UserAddress']['return_street2'] : '' ;?></p>
+								<p><?php echo $city = !empty($userProfileInfo['UserAddress']['return_city']) ? $userProfileInfo['UserAddress']['return_city'] : '' ;?></p>
+								<p><?php echo $state = !empty($userProfileInfo['UserAddress']['return_state']) ? $statelist[$userProfileInfo['UserAddress']['return_state']] : '' ;?></p>
+								<p><?php echo $zip = !empty($userProfileInfo['UserAddress']['return_zip']) ? $userProfileInfo['UserAddress']['return_zip'] : '' ;?></p>
+							<?php } ?>
+					</li>		
+				</ul>	
+			</section>                        
+		</section>
+		
+		

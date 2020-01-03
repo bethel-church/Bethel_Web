@@ -1,0 +1,25 @@
+<section class="fancy_container">    
+    <section class="fancy_contain">
+        <h2><?php echo ucfirst($getData['User']['username']);?></h2>
+    </section>
+    <section class="fancy_contain">
+        <label>Shoe Size</label>
+        <span><?php if(!empty($getData['UserProfile']['shoe_size'])) { echo $shoeSize[$getData['UserProfile']['shoe_size']]; } ?></span>
+    </section>    
+    <section class="fancy_contain">
+        <label>Dress Size</label>
+        <span><?php if(!empty($getData['UserProfile']['dress_size'])) { echo $dressSize[$getData['UserProfile']['dress_size']]; } ?></span>
+    </section>
+    <section class="fancy_contain">
+        <label>City</label>
+        <span><?php echo $getData['UserProfile']['city'];?></span>
+    </section>    
+    <section class="fancy_contain">
+        <label>State</label>
+        <span><?php if(!empty($getData['UserProfile']['state'])) { echo $statelist[$getData['UserProfile']['state']]; } ?></span>
+    </section>    
+    <section class="fancy_contain">
+        <label>Website</label>
+        <span><?php echo $getData['UserProfile']['website'];?></span>
+    </section>
+</section>

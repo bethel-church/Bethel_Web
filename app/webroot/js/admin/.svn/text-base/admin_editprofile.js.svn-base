@@ -1,0 +1,33 @@
+    jQuery(document).ready(function()
+    {
+        jQuery("#editProfileId").validate(
+        {	
+            errorElement: "div",
+            rules: {	                 
+                "data[Admin][first_name]": {
+                    required: true
+                },
+                 "data[Admin][email]": {
+                    required: true,
+                    email: true
+                },
+                "data[Admin][phone]": {
+                    number: true                    
+                }
+                
+            },
+             messages: {
+                "data[Admin][first_name]": {
+                    required: "Please enter the first name."                    
+                },
+                 "data[Admin][email]": {
+                    required: "Please enter a valid email address."
+                },
+                "data[Admin][phone]": {
+                    number: "Please enter the valid phone number."                    
+                }
+            }
+         
+        });
+    }); 
+    

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Staticpages
+END
+admin_index.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Staticpages/admin_index.ctp
+END
+admin_addedit.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Staticpages/admin_addedit.ctp
+END
+index.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repository/pluginproj/!svn/ver/2/pluginprojsvn/app/View/Staticpages/index.ctp
+END

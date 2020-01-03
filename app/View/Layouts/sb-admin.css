@@ -1,0 +1,460 @@
+/* 
+Author: Start Bootstrap - http://startbootstrap.com
+'SB Admin' HTML Template by Start Bootstrap
+
+All Start Bootstrap themes are licensed under Apache 2.0. 
+For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
+*/
+
+/* ATTN: This is mobile first CSS - to update 786px and up screen width use the media query near the bottom of the document! */
+
+/* Global Styles */
+
+body {
+  /*margin-top: 50px;*/
+}
+.opaqueHeader{z-index:1000;background-color:#FFFFFF}
+#wrapper {
+  padding-left: 0;
+}
+
+#page-wrapper {
+  width: 100%;
+  padding: 5px 15px !important;
+  z-index:1;
+}
+
+/* Nav Messages */
+
+.messages-dropdown .dropdown-menu .message-preview .avatar,
+.messages-dropdown .dropdown-menu .message-preview .name,
+.messages-dropdown .dropdown-menu .message-preview .message,
+.messages-dropdown .dropdown-menu .message-preview .time {
+  display: block;
+}
+
+.messages-dropdown .dropdown-menu .message-preview .avatar {
+  float: left;
+  margin-right: 15px;
+}
+
+.messages-dropdown .dropdown-menu .message-preview .name {
+  font-weight: bold;
+}
+
+.messages-dropdown .dropdown-menu .message-preview .message {
+  font-size: 12px;
+}
+
+.messages-dropdown .dropdown-menu .message-preview .time {
+  font-size: 12px;
+}
+
+
+/* Nav Announcements */
+
+.announcement-heading {
+  font-size: 50px;
+  margin: 0;
+}
+
+.announcement-text {
+  margin: 0;
+}
+
+/* Table Headers */
+
+table.tablesorter thead {
+  cursor: pointer;
+}
+
+table.tablesorter thead tr th:hover {
+  background-color: #f5f5f5;
+}
+
+/* Flot Chart Containers */
+
+.flot-chart {
+  display: block;
+  height: 400px;
+}
+
+.flot-chart-content {
+  width: 100%;
+  height: 100%;
+}
+
+/* Edit Below to Customize Widths > 768px */
+@media (min-width:768px) {
+
+  /* Wrappers */
+
+  #wrapper {
+	/*padding-left: 225px;*/
+  }
+
+  #page-wrapper {
+	 padding: 15px 25px !important;
+  }
+
+  /* Side Nav */
+
+  .side-nav {
+	margin-left: -225px;
+	left: 225px;
+	width: 225px;
+	position: fixed;
+	/*top: 50px;*/
+	height: 90%;
+	border-radius: 0;
+	border: none;
+	background-color: #222222;
+	overflow-y: auto;
+  }
+
+  /* Bootstrap Default Overrides - Customized Dropdowns for the Side Nav */
+
+  .side-nav>li.dropdown>ul.dropdown-menu {
+	position: relative;
+	min-width: 225px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	background-color: transparent;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+  }
+
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a {
+	color: #999999;
+	padding: 15px 15px 15px 25px;
+  }
+
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a:hover,
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a.active,
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a:focus {
+	color: #fff;
+	background-color: #080808;
+  }
+
+  .side-nav>li>a {
+	width: 225px;
+  }
+
+  .navbar-inverse .navbar-nav>li>a:hover,
+  .navbar-inverse .navbar-nav>li>a:focus {
+	background-color: #080808;
+  }
+
+  /* Nav Messages */
+
+  .messages-dropdown .dropdown-menu {
+	min-width: 300px;
+  }
+
+  .messages-dropdown .dropdown-menu li a {
+	white-space: normal;
+  }
+
+}
+/* Footer Section Set the fixed height of the footer here */
+#footer {
+    background-color: #F5F5F5;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+.footer-copy {
+    padding: 20px 0 10px 130px;
+    text-align: center;
+}
+
+html, body {
+	height: 100%;
+	background-color:#f9f9f9
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -5em;
+	width:80%
+}
+.footer, .push {
+	height: 5em;
+
+}
+/*.navbar-fixed-top, .navbar-fixed-bottom{position: absolute;}*/
+
+.bottom_nav_bar{border-bottom:1px solid #ccc}
+.navbar{border-radius:0px !important}
+
+.table-responsive{background-color:#fffff}
+.bigHeading{font-weight:bold;font-size:24px;margin-bottom:10px}
+.rightAlign{float:right}
+.leftAlign{float:left}
+/*.archiveH{text-align:center;font-size:12px; font-weight:normal;margin-left:35px}*/
+.archiveH{text-align:center;font-size:12px; font-weight:normal;margin-left:42px}
+/*.archiveH a{color:#5E5E5E;font-size:10px;font-weight:bold;text-decoration:underline;}*/
+.archiveH a{color:#5E5E5E;font-size:10px;font-weight:bold;text-decoration:underline;margin-left:-10px;}
+.searchBox{width:100% !important;margin-bottom:20px}
+.plain {height:60px;vertical-align:middle;}
+.plain td{background-color:#ffffff !important;vertical-align:middle !important; font-size:18px;}
+.plainSmall {height:60px;vertical-align:middle;}
+.plainSmall td{text-align:center;background-color:#ffffff !important;vertical-align:middle !important; font-size:14px;font-weight:normal;}
+.smH{font-weight:bold;}
+.addAction{background-color:#C0C0C0;width:150px;font-weight:bold}
+.zipBtn{background-color:#C0C0C0 !important;font-weight:bold}
+.tableheading{background-color:#F2F2F2 !important;font-size:20px}
+.tableheadingSmall{text-align:center;background-color:#F2F2F2 !important;font-size:16px;font-size:16px;}
+.buttonGap{margin-left:30px;}
+.leftPadding{padding-left:40px !important;}
+.btnDisabled{background-color:#F9F9F9;color:#A592A9}
+button.btnDisabled:hover{background-color:#F9F9F9 !important;cursor:pointer !important}
+.btnEnabled{background-color:#F3F3F3;color:#A592A9}
+.modalTitle{font-weight:bold;background-color:#F2F2F2}
+.btnLinkCancel{
+border:0px !important;
+background:none !important;
+padding:0px !important;
+cursor:pointer;
+color:#292943;
+font-weight:bold;
+margin-right:10px;
+}
+.btnLink{
+border:0px !important;
+background:none !important;
+padding:0px !important;
+cursor:pointer;
+color:#7C7991;
+font-weight:bold;
+}
+.btnLinkCancel:hover{
+border:0px !important;
+background:none !important;
+padding:0px !important;
+cursor:pointer;
+color:#292943;
+font-weight:bold;
+text-decoration:none;
+}
+.btnLink:hover{
+border:0px !important;
+background:none !important;
+padding:0px !important;
+cursor:pointer;
+color:#7C7991;
+font-weight:bold;
+text-decoration:none;
+}
+
+
+.btnLinkLgCancel{
+border:0px !important;
+background:none !important;
+padding:0px !important;
+cursor:pointer;
+color:#292943;
+font-size:18px;
+}
+.btnLinkLg{
+border:0px !important;
+background:none !important;
+padding:0px !important;
+cursor:pointer;
+color:#7C7991;
+font-weight:bold;
+font-size:18px;
+}
+.btnLinkLgCancel:hover{
+border:0px !important;
+background:none !important;
+padding:0px !important;
+cursor:pointer;
+color:#292943;
+}
+.btnLinkLg:hover{
+border:0px !important;
+background:none !important;
+padding:0px !important;
+cursor:pointer;
+color:#7C7991;
+font-weight:bold;
+}
+
+
+.modal-sm{width:400px}
+.modal-body{padding-bottom:0px;}
+.modal-footer{border-top:0px}
+
+.noborder{ 
+border-width: 1px 0px 1px 0px;
+border-spacing: 0;
+border-collapse: collapse;
+ 
+  border-image-source: linear-gradient(to bottom, #eee 0%, #bebebe 100%);
+  border-image-slice: 20;
+  border-image-repeat: stretch;
+  box-shadow: 0px 1px 3px #ccc;
+
+}
+.noborder th
+    {
+        margin: 0;
+        padding: 4px;
+        border-width: 1px 0px 0px 0px;
+        
+    }
+.noborder td
+    {
+        margin: 0;
+        padding: 4px;
+        border-width: 1px 1px 0 1px;
+        
+    }
+.fileHeading{color:#424242;font-size:20px;text-align:center;width:100%}
+.inputField{background-color:#F9F9F9}
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+        font-size:16px;
+        color:#5E5E65;
+        width:300px;
+        height:80px;
+        padding:25px 0px 15px 0px !important;
+        background-color:#C0C0C0;
+        margin-top:20px;
+    }
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+.center{text-align:center;width:100%}
+.smHeading{background-color:#FFFFFF;color:#000000 !important;font-size:12px;text-align:center;float:left;margin-left:10px;padding:5px;border: 2px solid #f2f2f2;}
+.fullWidth{width:100% !important}   
+/*.logoimg { margin:5px 5px; background-color:#D6D6D6;color:#929292;font-size:20px;text-align:center;width:200px;height:50px;padding-top:10px;padding-bottom:10px}*/
+.logoimg { margin:5px 5px;color:#929292;font-size:20px;text-align:center;height:50px;padding-top:0px;padding-bottom:0px}
+.logoimg h2 { font-weight: bold}
+.logoimg h2 span { font-weight: lighter}
+.logoimg img { width:100%}
+.navbar-nav > li:last-child { margin-bottom:auto;}
+.user-dropdown { margin-bottom: 0 !important }
+.user-dropdown .dropdown-toggle { margin:26px 15px 0;}
+.errMsg{text-align:right;background-color:#ff0000;color:#ffffff}
+.validationErrors #flashMessage{
+background-color:#ff0000 !important;
+color:#ffffff !important;
+text-align:right;
+font-size:12px;
+font-weight:normal;
+}
+.error-message{color:#ff0000}
+.error{color:#ff0000}
+.Logout{color:#333 !important;font-weight:bold !important;border:none;}
+/*.Logout :hover{color:#929292 !important;font-weight:bold !important;border:none;}*/
+.table-responsive{overflow-x:inherit !important;}
+.AdminRememberMe{margin-left:0px !important;}
+.fileContainer{text-align:center;margin:5px auto;color:#424242;font-size:15px;}
+.fileContainer #fileInfo{text-align:right;margin:0px auto;font-size:16px;display:inline;}
+.fileContainer #fileIcon{text-align:left;vertical-align:middle;display:inline;}
+/*.modal-dialog{
+  top:28% !important;
+}*/
+.modal-backdrop {
+  background-color: transparent !important;
+}
+.modal {
+}
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+}
+a hover{ text-underline:none }
+body{font-family: Open Sans !important; }
+.cusSelect{ color: #a9a9a9;font-size: 12px;top: -5px;}
+.trip_leader{margin-top:15px}
+a:hover, a:active, a:focus {
+  /* styling for any way a link is about to be used */
+  outline: 0px;
+}
+.greyheading{
+background-color:#C0C0C0 !important;  
+margin-top:17px;
+width:83px;
+padding:3px 4px;
+}
+.navbar-nav > li > a{
+padding-top:5px !important;
+padding-bottom:5px !important;
+}
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus{
+background-color:#C0C0C0 !important;
+}
+.cLinks{
+color: #c0c0c0;
+text-decoration:underline;
+font-size:13px;
+}
+.cLinks:hover{
+color: #c0c0c0;
+text-decoration:underline;
+cursor:pointer;
+}
+.padL{
+padding-left:20px;
+}
+.currentFile{color:#424242;font-size:15px;}
+.st{font-weight:bold;text-decoration:underline;}
+.greyLink{width:75px;padding-left:auto;padding-right:auto;}
+/*1st June, 2016*/
+.activeHeading{font-weight:bold;padding:5px;font-size:14px;margin:2px;background-color:#f2f2f2}
+.inactiveHeading{font-size:14px;padding:5px;margin:2px;margin:2px;color:#a592a9}
+.widthE{width:145px}
+.widthS{width:120px}
+.mainH{font-size:14px;margin:2px;background-color:#ffffff;margin-bottom:3px;}
+.pastLinks{
+color: #a592a9;
+font-size:13px;
+}
+.pastLinks:hover{
+color: #a592a9;
+text-decoration:underline;
+cursor:pointer;
+}
+.currentLinks{
+color: #000;
+text-decoration:underline;
+font-size:13px;
+}
+.currentLinks:hover{
+color: #000;
+text-decoration:underline;
+cursor:pointer;
+}
+.gapL{margin:10px 0px 10px 10px}

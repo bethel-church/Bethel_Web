@@ -1,0 +1,87 @@
+		<?php 
+				echo $this->Html->script('frontend/form/jquery.selectbox-0.2');
+				echo $this->Html->script('frontend/form/customInput.jquery');
+		?>
+		<script type="text/javascript">
+			jQuery(function () {
+				jQuery(".drpitem").selectbox();
+				jQuery('input').customInput();
+			});
+		</script>
+		<section class="con-frame font14 twocol clearfix">
+				<section class="leftcontent">
+					<?php echo $this->element('front/user_left_menu'); ?>   
+				</section>
+        <?php   echo $this->Form->create('UserSetting', array('url' => array('controller' => 'users', 'action' => 'notification_settings'),'id'=>'sharingId','type' => 'file'));
+								echo $this->Form->hidden('UserSetting.id',array('value'=> $id = (!empty($this->data['UserSetting']['id'])) ? $this->data['UserSetting']['id'] : '' ));
+				?>
+				<section class="rightcontent">
+						<h1 class="head">Email Settings</h1>
+								<ul class="form_widget  acc-form">		
+								<li>
+										<label>Follow</label>	
+										<section class="user-setting_rt">												
+												<section class="clearfix">																									
+														<?php 														
+														$followON = (isset($this->data['UserSetting']['follow']) && ($this->data['UserSetting']['follow'] == 1)) ? 'checked="checked"' : '';
+														$followOFF = ($followON == '') ? 'checked="checked"' : '';?>														
+														<input type="radio" value="1" id="follow1" name="follow" <?php echo $followON;?>>
+														<label for="follow1">ON</label>	
+														<input type="radio" value="0" id="follow0" name="follow" <?php echo $followOFF;?>>
+														<label for="follow0">OFF</label>
+												</section>
+											  <label class="label-text">Notify when someone follows you</label>											
+										</section>
+								</li>								
+								<li>
+										<label>Like or Share</label>															
+										<section class="user-setting_rt">													
+												<section class="clearfix">																									
+														<?php 														
+														$likeShareON = (isset($this->data['UserSetting']['like_share']) && ($this->data['UserSetting']['like_share'] == 1)) ? 'checked="checked"' : '';
+														$likeShareOFF = ($likeShareON == '') ? 'checked="checked"' : '';?>														
+														<input type="radio" value="1" id="likeshare1" name="like_share" <?php echo $likeShareON;?>>
+														<label for="likeshare1">ON</label>	
+														<input type="radio" value="0" id="likeshare0" name="like_share" <?php echo $likeShareOFF;?>>
+														<label for="likeshare0">OFF</label>
+														
+												</section>
+												<label class="label-text">Notify when someone likes or shares your listing</label>
+										</section>
+								</li>								
+								<li>
+										<label>Comment</label>															
+										<section class="user-setting_rt">	
+												<section class="clearfix">																									
+															<?php 														
+															$commentON = (isset($this->data['UserSetting']['comment']) && ($this->data['UserSetting']['comment'] == 1)) ? 'checked="checked"' : '';
+															$commentOFF = ($commentON == '') ? 'checked="checked"' : '';?>														
+															<input type="radio" value="1" id="comment1" name="comment" <?php echo $commentON;?>>
+															<label for="comment1">ON</label>	
+															<input type="radio" value="0" id="comment0" name="comment" <?php echo $commentOFF;?>>
+															<label for="comment0">OFF</label>
+												</section>
+												<label class="label-text">Notify when someone comments on your listing or mentions you</label>
+									</section>
+								</li>								
+								<li>
+										<label>Announcement</label>
+										<section class="user-setting_rt">	
+												<section class="clearfix">																									
+														<?php 														
+														$announcementON = (isset($this->data['UserSetting']['announcement']) && ($this->data['UserSetting']['announcement'] == 1)) ? 'checked="checked"' : '';
+														$announcementOFF = ($announcementON == '') ? 'checked="checked"' : '';?>														
+														<input type="radio" value="1" id="announcement1" name="announcement" <?php echo $announcementON;?>>
+														<label for="announcement1">ON</label>	
+														<input type="radio" value="0" id="anouncement0" name="announcement" <?php echo $announcementOFF;?>>
+														<label for="anouncement0">OFF</label>
+												</section>
+												<label class="label-text">Notify when there is a Posh announcement</label>
+										</section>
+								</li>
+								<li class="buttonwdget clearfix">                        
+										<input type="submit" name="button" class="button fl-rt" value="Save Settings">
+								</li>								
+						</ul>						
+				</section>            
+    </section>

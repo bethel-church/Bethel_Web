@@ -1,0 +1,1 @@
+<?php echo $this->Html->image('access.jpeg',array('width'=>'80%'));?>

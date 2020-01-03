@@ -1,0 +1,113 @@
+	<?php 
+		echo $this->Html->script('frontend/signup');
+		echo $this->Html->script('jcrop/ajaxuploader');
+	?>
+	<section class="con-frame font14 twocol clearfix">
+	<section class="leftcontent">
+		<?php echo $this->element('front/user_left_menu'); ?>   
+	</section>
+	<?php   echo $this->Form->create(null, array('url' => array('controller' => 'users', 'action' => 'edit_profile'),'id'=>'signupId','type' => 'file'));
+			echo $this->Form->hidden('User.id',array('value'=> $this->data['User']['id']));
+			echo $this->Form->hidden('User.old_image',array('value'=> $this->data['User']['image']));
+	?>			
+		<section class="rightcontent">
+		   <?php echo $this->Session->flash(); ?>
+			<h1 class="head">Edit Profile</h1>
+			<ul class="form_widget">
+				<li>
+					<section class="clearfix">
+						<section class="uploadpic" id="userProfilePicId">
+							<?php
+								$image = 'frontend/profile_pic.png';
+								$imageName = 'users/thumb/'.$this->data['User']['image'];                
+								if(file_exists(WWW_ROOT.'/img/'.$imageName) && !empty($this->data['User']['image']))
+								{
+									$image = $imageName;
+								}
+								echo $this->Html->image($image, array("alt" => "profile image","title" => "profile image"));
+								?>
+						</section>
+						<span style="position:relative;" class="button graybtn">
+							<font style="font-weight:bold; color:#093; position:relative; top:2px; font-size:17px;">+</font>Add
+							<?php echo $this->Form->input('temp_image',array('type'=>'file','div'=>false,'label'=>false,'id' => 'tempImageId','class'=>'uploadFile'));?>
+						</span>
+						<span id ="loadingContainerId" class="signuploader display_none">		
+							<?php echo $this->Html->image('signup-ajax-loader.gif', array('alt' => 'Loading...','title' => 'Loading...'));?>
+						</span>
+					</section>
+					<section id="removeImageErrorId">
+						<?php echo $this->Form->text('image',array('value'=> $this->data['User']['image'],'label'=>false,'id' => 'userImageId','class' => 'imageinputbox')); ?>
+					</section>
+				</li>
+				<li>
+					<label>Username</label>
+					<p class="padrt">
+					 <?php echo $this->Form->input('username',array('label' => false,'div' => false, 'placeholder' => 'Username','class' => 'textfield fullwidth','maxlength' => 30,'readonly' => 'readonly'));?>				
+					</p>
+				</li>
+				<li>
+					<section class="clearfix">
+						<section class="section_col">
+							<label>First name</label>
+							<p class="padrt">
+							<?php echo $this->Form->input('first_name',array('label' => false,'div' => false, 'placeholder' => 'First name','class' => 'textfield fullwidth','maxlength' => 55));?>								
+							</p>
+						</section>
+						
+						<section class="section_col fl-rt">
+							<label>last name</label>
+							<p class="padrt">
+							<?php echo $this->Form->input('last_name',array('label' => false,'div' => false, 'placeholder' => 'Last Name','class' => 'textfield fullwidth','maxlength' => 55));?>
+							
+							</p>
+						</section>
+					</section>
+				</li>
+				<li>
+					<label>Email address</label>
+					<p class="padrt">
+					<?php echo $this->Form->input('email',array('label' => false,'div' => false, 'placeholder' => 'Email','class' => 'textfield fullwidth','maxlength' => 55,'readonly' => 'readonly'));?>
+					
+					</p>
+				</li>				
+				<li>
+					<label>Shoe Size</label>
+					<p class="padrt">
+					  <?php echo $this->Form->input('UserProfile.shoe_size', array('label' => false,'div' => false,'options' => $shoeSize,'empty' => 'Choose Size','class' => 'select fullwidth')); ?>
+					</p>
+				</li>
+				<li>
+					<label>Dress Size</label>
+					<p class="padrt">
+					   <?php echo $this->Form->input('UserProfile.dress_size', array('label' => false,'div' => false,'options' => $dressSize,'empty' => 'Choose Size','class' => 'select fullwidth')); ?>
+					</p>
+				</li>
+				
+				 <li>
+					<label>City</label>
+					<p class="padrt">
+					<?php echo $this->Form->input('UserProfile.city',array('label' => false,'div' => false, 'placeholder' => 'City','class' => 'textfield fullwidth','maxlength' => 55));?>
+					</p>
+				</li>
+				<li>
+					<label>State</label>
+					<p class="padrt">
+					 <?php echo $this->Form->input('UserProfile.state', array('label' => false,'div' => false,'options' => $statelist,'empty' => 'Choose State','class' => 'select fullwidth')); ?>
+					</p>
+				</li>
+				<li>
+					<label>Website</label>
+					<p class="padrt">
+					 <?php echo $this->Form->input('UserProfile.website',array('label' => false,'div' => false, 'placeholder' => 'Website','class' => 'textfield fullwidth','maxlength' => 30));?>
+					
+					</p>
+				</li>				
+				<li class="buttonwdget clearfix">					
+					<?php //echo $this->Form->button('Cancel', array('type' => 'submit','class' => 'button graybtn fl-lt'));?>
+					<?php echo $this->Form->button('Save Profile', array('type' => 'submit','class' => 'button fl-rt'));?>
+				</li>					
+			</ul>		 
+		</section>
+		<?php echo $this->Form->end(); ?>  
+		<section id="imageCropDivId"></section>  			
+	</section>

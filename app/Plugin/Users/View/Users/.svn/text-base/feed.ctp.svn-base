@@ -1,0 +1,265 @@
+<section class="section-widget">
+    
+    <section class="clearfix isotope" id="containerId">
+    
+    <?php for($i=1; $i<=3;$i++)
+    {?>
+        <!--Post 1 Start-->
+        <section class="box-widget isotope-item">
+            <section class="topimage">
+                <p><?php echo $this->Html->image("frontend/postpic1.jpg", array("alt" => "image","title" => "image"));?></p>
+                <p class="post-title">Lorem ipsum dolor sit amet, con se ctet uer adi piscing elit<a href="#" class="orangelink">...</a></p>
+            </section>
+            <section class="post-price overflow_h">
+                <section class="pricewidgt"><span class="pricelabel"><strong>$18</strong></span>    <s>$0</s></section>
+                <section class="sizewidgt">Size: <strong>4</strong></section>
+            </section>
+            <section class="grayfame">
+                <section class="comment">
+                    <ul class="comments-widget">
+                        <li>
+                            <section class="userlinks clearfix">
+                                <section class="userphoto marginright10"><?php echo $this->Html->image("frontend/userpic.png", array("alt" => "image","title" => "image"));?></section>
+                                <section class="usercomment roundcorner">
+                                    <span class="commentarrow">
+                                        <?php echo $this->Html->image("frontend/spacer.png", array("width" => "1","height" => "1"));?>
+                                        </span>
+                                    <a href="#"><strong>kani907@mauishopgirl</strong></a>
+                                    <p>Thought u might be interest in the two I just added to this listing.</p>
+                                </section>
+                            </section>
+                        </li>
+                    </ul>
+                </section>
+                <section class="comment paddingtop0"> 
+                    <ul class="postlinks clearfix">
+                        <li><a href="#" class="link-like">Like</a></li>
+                        <li><a href="#" class="link-comment">Comment</a></li>
+                        <li><a href="#" class="link-share">Share</a></li>
+                    </ul>
+                </section>
+                
+                <section class="comment userlinks userlikes"> 
+                    <span class="userslike">                        
+                         <?php echo $this->Html->image("frontend/userlikeicon.png", array("width" => "20","height" => "19"));?>
+                        </span> <a href="#">ravi2014</a>
+                </section>
+                
+                <section class="comment user-comment clearfix"> 
+                    <section class="userphoto fl-rt">
+                        <?php echo $this->Html->image("frontend/userpic.png", array("alt" => "image","alt" => "image"));?>                        
+                    </section>
+                    <section class="addcomment">
+                        <input type="text" name="textfield2" class="textfield fullwidth roundcorner" onfocus="if (this.value == 'Write your comment') {this.value=''}" onblur="if(this.value == '') { this.value='Write your comment'}" value="Write your comment" />
+                    </section>
+                </section>
+            </section>
+        </section>
+        <!--Post 1 Closed-->
+        
+        <!--Post 2 Start-->
+        <section class="box-widget isotope-item">
+            <section class="topimage">
+                <p>
+                    <?php echo $this->Html->image("frontend/postpic2.jpg", array("alt" => "image","alt" => "image"));?>                        
+                    
+                </p>
+                <p class="post-title">Lorem ipsum dolor sit amet, con se ctet uer adi piscing elit<a href="#" class="orangelink">...</a></p>
+            </section>
+            <section class="post-price overflow_h">
+                <section class="pricewidgt"><span class="pricelabel"><strong>$18</strong></span>    <s>$0</s></section>
+                <section class="sizewidgt">Size: <strong>4</strong></section>
+            </section>
+            <section class="grayfame">
+                <section class="comment">
+                    <ul class="comments-widget">
+                        <li>
+                            <section class="clearfix">
+                                <section class="userphoto marginright10">
+                                        <?php echo $this->Html->image("frontend/userpic.png", array("alt" => "image","alt" => "image"));?>                        
+                                    
+                                    </section>
+                                <section class="userlinks usercomment roundcorner">
+                                    <span class="commentarrow">
+                                        <?php echo $this->Html->image("frontend/spacer.png", array("width" => "1","height" => "1"));?>                        
+                                        </span>
+                                    <a href="#"><strong>kani907@mauishopgirl</strong></a>
+                                    <p>Thought u might be interest in the two I just added to this listing.</p>
+                                </section>
+                            </section>
+                        </li>
+                    </ul>
+                </section>
+                <section class="comment paddingtop0"> 
+                    <ul class="postlinks clearfix">
+                        <li><a href="#" class="link-like">Like</a></li>
+                        <li><a href="#" class="link-comment">Comment</a></li>
+                        <li><a href="#" class="link-share">Share</a></li>
+                    </ul>
+                </section>
+                
+                <section class="comment userlinks userlikes"> 
+                    <span class="userslike">
+                        
+                        <?php echo $this->Html->image("frontend/userlikeicon.png", array("width" => "20","height" => "19"));?>                        
+                        </span> <a href="#">60 likes</a>
+                </section>
+                
+                <section class="comment bordertop">
+                    <ul class="comments-widget">
+                        <li>
+                            <section class="clearfix">
+                                <section class="userphoto marginright10">
+                                    
+                                    <?php echo $this->Html->image("frontend/userpic.png", array("alt" => "image","title" => "image"));?>                        
+                                    </section>
+                                <section class="userlinks usercomment roundcorner">
+                                    <span class="commentarrow">
+                                        
+                                        <?php echo $this->Html->image("frontend/spacer.png", array("width" => "1","height" => "1"));?>                        
+                                        </span>
+                                    <a href="#">kani907@hopgirl</a> Lorem ipsum dolor sit amet, con se ctetuer adipiscing elit. edolor sit amet, con se ctetuer adipiscing elit
+                                </section>
+                            </section>
+                        </li>
+                        <li>
+                            <section class="clearfix">
+                                <section class="userphoto marginright10">
+                                    <?php echo $this->Html->image("frontend/userpic.png", array("alt" => "image","title" => "image"));?> 
+                                    </section>
+                                <section class="userlinks usercomment roundcorner">
+                                    <span class="commentarrow">
+                                        <?php echo $this->Html->image("frontend/spacer.png", array("width" => "1","height" => "1"));?>                                        </span>
+                                    <a href="#">kani907@hopgirl</a> Lorem ipsum dolor sit amet, dolor sit amet
+                                </section>
+                            </section>
+                        </li>
+                    </ul>
+                </section>
+                
+                <section class="comment userlinks bordertop allcomments"> 
+                    <a href="#">All 9 Comments</a>
+                </section>
+                
+                <section class="comment user-comment clearfix"> 
+                    <section class="userphoto fl-rt">
+                          <?php echo $this->Html->image("frontend/userpic.png", array("alt" => "image","title" => "image"));?>
+                        
+                        </section>
+                    <section class="addcomment">
+                        <input type="text" name="textfield2" class="textfield fullwidth roundcorner" onfocus="if (this.value == 'Write your comment') {this.value=''}" onblur="if(this.value == '') { this.value='Write your comment'}" value="Write your comment" />
+                    </section>
+                </section>
+            </section>
+        </section>
+        <!--Post 2 Closed-->
+        
+        <!--Post 3 Start-->
+        <section class="box-widget isotope-item">
+            <section class="topimage">
+                <p>
+                      <?php echo $this->Html->image("frontend/postpic3.jpg", array("alt" => "image","title" => "image"));?>                    
+                </p>
+                <p class="post-title">Lorem ipsum dolor sit amet, con se ctet uer adi piscing elit<a href="#" class="orangelink">...</a></p>
+            </section>
+            <section class="post-price overflow_h">
+                <section class="pricewidgt"><span class="pricelabel"><strong>$18</strong></span>    <s>$0</s></section>
+                <section class="sizewidgt">Size: <strong>4</strong></section>
+            </section>
+            <section class="grayfame">
+                <section class="comment">
+                    <ul class="comments-widget">
+                        <li>
+                            <section class="clearfix">
+                                <section class="userphoto marginright10">
+                                    
+                                    <?php echo $this->Html->image("frontend/userpic.png", array("alt" => "image","title" => "image"));?>                    
+                                    </section>
+                                <section class="userlinks usercomment roundcorner">
+                                    <span class="commentarrow">
+                                        <?php echo $this->Html->image("frontend/spacer.png", array("width" => "1","height" => "1"));?>                    
+                                        </span>
+                                    <a href="#"><strong>kani907@mauishopgirl</strong></a>
+                                    <p>Thought u might be interest in the two I just added to this listing.</p>
+                                </section>
+                            </section>
+                        </li>
+                    </ul>
+                </section>
+                <section class="comment paddingtop0"> 
+                    <ul class="postlinks clearfix">
+                        <li><a href="#" class="link-like">Like</a></li>
+                        <li><a href="#" class="link-comment">Comment</a></li>
+                        <li><a href="#" class="link-share">Share</a></li>
+                    </ul>
+                </section>
+                
+                <section class="comment userlinks userlikes"> 
+                    <span class="userslike">
+                        
+                        <?php echo $this->Html->image("frontend/userlikeicon.png", array("width" => "20","height" => "19"));?>                    
+                        
+                    
+                    </span> <a href="#">joanamb</a> and  <a href="#">27 others</a> like this
+                </section>
+                
+                <section class="comment bordertop">
+                    <ul class="comments-widget">
+                        <li>
+                            <section class="clearfix">
+                                <section class="userphoto marginright10">
+                                    
+                                    
+                                    
+                                <?php echo $this->Html->image("frontend/userpic.png", array("alt" => "image","title" => "image"));?>                    
+                                
+                                </section>
+                                <section class="userlinks usercomment roundcorner">
+                                    <span class="commentarrow">
+                                        
+                                        <?php echo $this->Html->image("frontend/spacer.png", array("width" => "1","height" => "1"));?>                    
+                                        
+                                        </span>
+                                    <a href="#">kani907@hopgirl</a> Lorem ipsum dolor sit amet, con se ctetuer adipiscing elit. edolor sit amet, con se ctetuer adipiscing elit
+                                </section>
+                            </section>
+                        </li>
+                        <li>
+                            <section class="clearfix">
+                                <section class="userphoto marginright10">
+                                    
+                                    <?php echo $this->Html->image("frontend/userpic.png", array("alt" => "image","title" => "image"));?>                    
+                                    </section>
+                                <section class="userlinks usercomment roundcorner">
+                                    <span class="commentarrow">
+                                        
+                                        <?php echo $this->Html->image("frontend/spacer.png", array("width" => "1","height" => "1"));?>                    
+                                        
+                                    
+                                    </span>
+                                    <a href="#">kani907@hopgirl</a> Lorem ipsum dolor sit amet, dolor sit amet
+                                </section>
+                            </section>
+                        </li>
+                    </ul>
+                </section>                    
+               
+                <section class="comment user-comment clearfix"> 
+                    <section class="userphoto fl-rt">
+                        
+                        <?php echo $this->Html->image("frontend/userpic.png", array("alt" => "image","title" => "image"));?>
+                        
+                       </section>
+                    <section class="addcomment">
+                        <input type="text" name="textfield2" class="textfield fullwidth roundcorner" onfocus="if (this.value == 'Write your comment') {this.value=''}" onblur="if(this.value == '') { this.value='Write your comment'}" value="Write your comment" />
+                    </section>
+                </section>
+            </section>
+        </section>
+        <!--Post 3 Closed-->
+        
+        
+        <?php } ?>
+      
+    </section>
+</section>
