@@ -13,43 +13,9 @@
 
         function index()
         {
-          //echo "Invalid URL";
-          echo "Testing...."."<br/>";
-          $filelist = $this->Aws->getlistObjects("receipts/1");
-          $path = AWS_S3_BUCKET_PATH."/";
-          $zipname = WWW_ROOT.'zz/TestTest.zip';
-          $sample_xls = AWS_S3_BUCKET_PATH.'/receipts/'.$id.'/Trip.xlsx';
-          $sample_pdf = AWS_S3_BUCKET_PATH.'/receipts/'.$id.'/Trip.pdf';
-          $rendererLibraryPath = WWW_ROOT."../Vendor/mpdf60";
-          $inputFileName = WWW_ROOT.'receipts/sample_r.xlsx';
-          $zip = new ZipArchive;
-          //if ($zip->open($zipname, ZIPARCHIVE::CREATE)!==TRUE) {
-          if ($zip->open($zipname, ZIPARCHIVE::OVERWRITE)!==TRUE) {
-            exit("cannot open <$zipname>\n");
-          }
-          foreach ($filelist as $key => $value) {
-            # code...
-            $entry = $value['Key'];
-            if ($entry != ".." && !strstr($entry,'.php')) {
-                $zip->addFile($path.$entry, $entry) or die("Could not add file to zip archive");
-                $content = file_get_contents($path.$entry);
-                $zip->addFromString(pathinfo ( $path.$entry, PATHINFO_BASENAME), $content);
-            }
-          }
-          $zip->close();
-          header('Content-Type: application/zip');
-          header("Content-Disposition: attachment; filename='TestTest.zip'");
-          header('Content-Length: ' . filesize($zipname));
-          header("Location: /zz/TestTest.zip");
+          echo "Invalid URL";
           exit();
         }
-
-          /*while (false !== ($entry = readdir($handle))) {
-            if ($entry != "." && $entry != ".." && !strstr($entry,'.php')) {
-                $zip->addFile($path.$entry, $entry) or die("Could not add file to zip archive");
-                //echo "<br />here".$path.$entry;
-            }
-          }*/
 
         function get_trip_list(){
 		  $data = json_decode( file_get_contents('php://input') );
